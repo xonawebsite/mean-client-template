@@ -25,13 +25,14 @@ export class LoginComponent {
     const { email, password } = this.loginForm.value;
     this.http.post(apiUrl+'/auth/login', { email, password }).subscribe({
       next: (res: any) => {
-        this.toastService.show({
-          color: 'success',
-          message: res.message,
-        })
+        localStorage.setItem('auth-token', res.token);
+        localStorage.setItem('user-profile', JSON.stringify(res.data));
         // Redirecting to the dashboard
         this.router.navigate(['/dashboard']).then(() => {
-          console.log('Welcome!');
+          this.toastService.show({
+            color: 'success',
+            message: res.message,
+          })
         });
       },
       error: (res: any) => {

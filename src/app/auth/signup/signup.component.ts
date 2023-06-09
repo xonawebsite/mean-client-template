@@ -32,6 +32,9 @@ export class SignupComponent {
     const { name, email, password } = this.signupForm.value;
     this.http.post(apiUrl+'/auth/signup', { name, email, password }).subscribe({
       next: (res: any) => {
+        localStorage.setItem('auth-token', res.token);
+        localStorage.setItem('user-profile', JSON.stringify(res.data));
+        // redirecting to dashboard
         this.router.navigate(['/dashboard']).then(() => {
           this.toastService.show({
             color: 'success',

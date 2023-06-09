@@ -1,52 +1,23 @@
-# MEAN Stack REST API template using TypeScript
+# MEAN Stack Angular 16 client template
 This is a simple way to get started in a mean project.
 
 This project includes:
-- express
-- mongoose
-- nodemailer
-- dotenv
-- cors
-- bcrypt
-- helmet
-- debug
-- cookie-parser
-- http-errors
-- jsonwebtoken
-- mongo-store
-- morgan
-- auth routes (signup & login)
-- auth middleware (authorization skeleton, authenticationRequired and apiToken required)
-- basic user model
-- env.example with every used variable
+- Angular 16
+- Taiwindcss
+- Chart.js
+- Material icons
+- Bootstrap icons
 
-# Commands
+# Views
 
-```sh
-npm start # build the project (prestart script) and start the server
-
-npm run start:dev # start the project in watch mode (nodemon)
-
-npm run serve # start the project without building the project (ts-node)
-
-npm run build # builds the project to ./dist
-
-npm run debug # turns on the debug mode and runs npm run start
-
-npm run dev # turns on the debug mode and runs npm run start:dev
-```
-
-# Endpoints
-
-I've included an [Insomnia json](./mean-api-template.json) so you can test every single endpoint by yourself.
+- `/` Portal boilerplate
+- `/auth/login` Login
+- `/auth/signup` Sign Up
+- `/dashboard` Admin Dashboard
 
 # Contributing
 
-See [CONTRIBUTING](./CONTRIBUTING.md) for information on how to contribute to the project
-
-# Changelog
-
-See the [CHANGELOG](./CHANGELOG.md) to see how is the project progressing.
+See [CONTRIBUTING](./CONTRIBUTING.md) for information on how to contribute to the project.
 
 # Disclaimer
 
