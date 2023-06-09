@@ -1,0 +1,4 @@
+<div class="mb-6 min-w-[256px] relative -translate-x-full bg-white">
+    <h2 class="text-2xl px-4 py-2 border {{ color == 'success' ? 'bg-teal-500 border-teal-700 text-white' : color == 'warning' ? 'bg-amber-500 border-amber-700' : 'bg-red-500 border-red-700 text-white' }}">{{ color == 'success' ? 'Success' : color == 'warning' ? 'Warning' : 'Error' }}</h2>
+    <p class="px-4 py-2 {{ color == 'success' ? 'bg-teal-300' : color == 'warning' ? 'bg-amber-300' : 'bg-red-300' }}">{{message}}</p>
+</div>

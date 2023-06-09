@@ -3,16 +3,18 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { apiUrl } from 'src/app/api';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styles: []
 })
 export class SignupComponent {
   fb = inject(FormBuilder);
   http = inject(HttpClient);
   router = inject(Router);
+  toastService = inject(ToastService);
 
   signupForm = this.fb.group({
     name: ['', Validators.required],
@@ -29,11 +31,19 @@ export class SignupComponent {
   onSubmit() {
     const { name, email, password } = this.signupForm.value;
     this.http.post(apiUrl+'/auth/signup', { name, email, password }).subscribe({
-      next: (res) => {
-        console.log(res);
+      next: (res: any) => {
+        this.router.navigate(['/dashboard']).then(() => {
+          this.toastService.show({
+            color: 'success',
+            message: res.message,
+          });
+        });
       },
-      error: (err) => {
-        console.log(err);
+      error: (res: any) => {
+        this.toastService.show({
+          color: 'danger',
+          message: res.error.message,
+        })
       },
     });
   }
