@@ -1,27 +1,57 @@
-# MeanProject
+# MEAN Stack REST API template using TypeScript
+This is a simple way to get started in a mean project.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
+This project includes:
+- express
+- mongoose
+- nodemailer
+- dotenv
+- cors
+- bcrypt
+- helmet
+- debug
+- cookie-parser
+- http-errors
+- jsonwebtoken
+- mongo-store
+- morgan
+- auth routes (signup & login)
+- auth middleware (authorization skeleton, authenticationRequired and apiToken required)
+- basic user model
+- env.example with every used variable
 
-## Development server
+# Commands
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```sh
+npm start # build the project (prestart script) and start the server
 
-## Code scaffolding
+npm run start:dev # start the project in watch mode (nodemon)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+npm run serve # start the project without building the project (ts-node)
 
-## Build
+npm run build # builds the project to ./dist
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+npm run debug # turns on the debug mode and runs npm run start
 
-## Running unit tests
+npm run dev # turns on the debug mode and runs npm run start:dev
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Endpoints
 
-## Running end-to-end tests
+I've included an [Insomnia json](./mean-api-template.json) so you can test every single endpoint by yourself.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Contributing
 
-## Further help
+See [CONTRIBUTING](./CONTRIBUTING.md) for information on how to contribute to the project
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Changelog
+
+See the [CHANGELOG](./CHANGELOG.md) to see how is the project progressing.
+
+# Disclaimer
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>. 
