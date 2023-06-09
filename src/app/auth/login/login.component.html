@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+
+<div class="h-[100vh] flex justify-center items-center">
+    <div class="w-2/4 bg-white shadow-md py-4 px-8">
+        <h2 class="text-center text-3xl font-bold font-serif mb-4">Login</h2>
+        <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+            <label for="email" class="mb-4 block">
+                Email
+                <input type="email" id="email" formControlName="email" class="block px-2 py-1 text-sm w-full border border-gray-100" required>
+            </label>
+            <label for="password" class="mb-4 block">
+                Password
+                <input type="password" id="password" formControlName="password" class="block px-2 py-1 text-sm w-full border border-gray-100" required>
+            </label>
+            <div class="flex justify-end">
+                <a routerLink="/auth/signup" class="text-sm py-1 px-4 mr-2 border border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white font-bold">Register Instead</a>
+                <button [disabled]="loginForm.invalid" type="submit" class="text-sm cursor-pointer disabled:bg-teal-200 disabled:cursor-not-allowed bg-teal-500 text-white w-auto block px-4 py-1">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
